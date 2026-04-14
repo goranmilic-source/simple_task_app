@@ -1,5 +1,6 @@
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
+const addFakeBtn = document.getElementById("addFakeBtn");
 const taskList = document.getElementById("taskList");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -64,7 +65,12 @@ function addTask() {
   taskInput.focus();
 }
 
+function addFakeTask() {
+  alert("HA HA! Sucker!")
+}
+
 addTaskBtn.addEventListener("click", addTask);
+addFakeBtn.addEventListener("click", addFakeTask);
 
 taskInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
